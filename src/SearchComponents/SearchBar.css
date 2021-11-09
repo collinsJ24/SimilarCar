@@ -1,0 +1,8 @@
+.BarStyling {
+    background: #F2F1F9;
+    border: solid;
+    flex-grow: 1;
+    margin-left: 5%;
+    padding: 10px;
+    width: 100%;
+}

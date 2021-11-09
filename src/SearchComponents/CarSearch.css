@@ -1,0 +1,7 @@
+.CarDropdown{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-inline: 100px;
+}
