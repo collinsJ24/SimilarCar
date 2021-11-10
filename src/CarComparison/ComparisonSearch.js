@@ -8,6 +8,7 @@ const ComparisonSearch = () => {
     return (
         <div className="Search">
             <CarSearch carHeading = "Car 1"/>
+            <button> Compare Cars </button>
             <CarSearch carHeading = "Car 2" />
 
         </div>
