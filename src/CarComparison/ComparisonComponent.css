@@ -1,11 +1,12 @@
 .ComparisonComponent {
-    background-color: #f6f8fa;
   display: flex;
   height: 400px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border: black;
+  border: rgb(240, 235, 235);
+  border-radius: 30px;
   border-style: solid;
   color: white;
+  margin: 5%;
+  margin-bottom: 0px;
   }

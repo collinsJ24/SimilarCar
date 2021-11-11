@@ -1,0 +1,200 @@
+.CarDropdown{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-inline: 100px;
+}
+
+.BarStyling {
+    background: #F2F1F9;
+    border: solid;
+    flex-grow: 1;
+    margin-left: 5%;
+    padding: 10px;
+    width: 100%;
+}
+
+.select {
+	width: 100%;
+	height: 40px;
+	cursor: pointer;
+	background-color: white;
+	box-shadow: 0 2px 0 white;
+	border-radius: 2px;
+    margin-bottom: 6px;
+	
+	&_expand {
+		width: 0;
+		height: 40px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		
+		&::after {
+			content: '\003E';
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translate(-50%, -50%) rotate(90deg) scaleY(1.75);
+			color: #3e3e3e;
+			font-size: 28px;
+			pointer-events: none;
+			z-index: 2;
+			transition: all 250ms cubic-bezier(.4,.25,.3,1);
+			opacity: .6;
+		}
+		
+		&:hover::after {opacity: 1}
+
+		&:checked::after {transform: translate(-50%, -50%) rotate(90deg) scaleX(-1) scaleY(1.75);}
+	}
+	
+	&_expandLabel {
+		display: block;
+		width: 100%;
+		height: 40px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		cursor: pointer;
+	}
+	
+	&_close {display: none}
+	
+	&_closeLabel {
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: none;
+	}
+	
+	&_items {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border: 2px solid #2fb5d1;
+		border-radius: 2px;
+		padding-top: 40px;
+	}
+	
+	&_input {display: none}
+	
+	&_label {
+		transition: all 250ms cubic-bezier(.4,.25,.3,1);
+		display: block;
+		height: 0;
+		font-size: 1.2rem;
+		line-height: 40px;
+		overflow: hidden;
+		color: #3e3e3e;
+		background-color: #fff;
+		cursor: pointer;
+		padding-left: 20px;
+		
+		&-placeholder {
+			height: 40px;
+			vertical-align: middle;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: .6;
+			background-color: transparent;
+		}
+	}
+	
+	&_expand:checked {
+		+ .select_closeLabel {
+			display: block;
+			
+			+ .select_options {
+				.select_label {
+					height: 40px;
+					&:hover {background-color: #f7f7f7}
+				}
+				
+				+ .select_expandLabel {display: none}
+			}
+		}
+	}
+	
+	&_input:checked + .select_label {
+		height: 40px;
+		margin-top: -40px;
+	}
+}
+
+
+.Search{
+    display: flex;
+}
+
+.CarHeading{
+    color: black;
+    font: bold;
+}
+
+.findCar {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(189, 186, 186);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    align-self: center;
+    margin-bottom: 5px;
+}
+
+.findCar:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.findCar:active {
+    color: rgb(197, 186, 186)
+}
+
+.findCar:active:after {
+    background: transparent;
+}
+
+.findCar:hover:before {
+    opacity: 1;
+}
+
+.findCar:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(202, 201, 201);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
