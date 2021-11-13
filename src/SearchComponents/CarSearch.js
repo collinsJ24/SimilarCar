@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../SearchComponents/SearchBar.css';
 import './CarSearch.scss';
 import CarImage from '../CarSpecResults/CarImage';
+import Loader from 'react-loader-spinner';
 
 const CarSearch = (props) => {
     const [selectedOption, setSelectedOption] = useState("Select a manufacturer");
@@ -10,6 +11,10 @@ const CarSearch = (props) => {
     const [carData, setCarData] = useState([]);
     const [imageLink, setImageLink] = useState();
     const [isImageSet, setImageSet ] = useState(false);
+    const [isLoaderSet, setLoader ] = useState(false);
+    const [showSelect, setShowSelect] = useState(true);
+    const [showButton, setShowButton] = useState(true);
+    const [carTitle, setCarTitle] = useState("");
 
     var data = {};
     var modelData = {};
@@ -44,8 +49,23 @@ const CarSearch = (props) => {
     console.log(event.target.value);
     console.log(carData.make);
     console.log(carData.model);
-    setImageSet(true);
+    setCarTitle(carData.make + " : " + carData.model + " "  + event.target.value);
   };
+
+  const setLoaderStatus = () => {
+    setLoader(true);
+    setImageSet(true);
+    setShowButton(false);
+  }
+
+  const setImage = () => {
+    console.log("Setting image");
+    setImageSet(true);
+    setLoader(false);
+    setShowSelect(false);
+  }
+
+
 
   const [carMakes, setCarMakes] = useState([]);
   const fetchCarMakesHandler = async () => {
@@ -102,37 +122,42 @@ const CarSearch = (props) => {
   
   useEffect( () => {fetchCarMakesHandler()},[]);
 
-    return (
+    return ( 
         <div className="CarDropdown">
              <div className="CarHeading"> {props.carHeading} </div>
-             {!isImageSet && 
-        <img className="CarImage" src= "https://www.pngfind.com/pngs/m/202-2027599_png-file-svg-car-symbol-vector-transparent-png.png" alt="defult_image" ></img>
+             {!isLoaderSet && !isImageSet && 
+        <img className="CarImage" src= "https://www.carhuddle.com/images/default/car-default.jpg" alt="defult_image" ></img>
         }
+        {isLoaderSet && <Loader classNames="loader" type="Circles" color="#00BFFF" height={50} width={50}/>}
              {isImageSet && 
-        <CarImage imageLink={imageLink}></CarImage>
+        <CarImage onImageReadyToDisplay={setImage} imageLink={imageLink}></CarImage>
 }
-             <select className="select"
+         
+{showSelect &&    <select className="select"
      value={selectedOption}
      onChange={filterChangeHandler}
     ><option value={selectedOption} disabled >{selectedOption}</option>
     {carMakes.map((carMake) => <option value={carMake.make}>{carMake.make}</option>)}
-    </select>
+    </select> }
 
-    <select className="select"
+    {showSelect && <select className="select"
      value={selectedOptionModel}
      onChange={filterChangeHandlerModel}
     ><option value={selectedOptionModel} disabled >{selectedOptionModel}</option>
     {carModels.map((carModel) => <option value={carModel.model}>{carModel.model}</option>)}
-    </select>
+    </select> }
     
-    <select className="select"
+    {showSelect && <select className="select"
      value={selectedYear}
      onChange={filterChangeHandlerYear}
     ><option value={selectedYear} disabled >{selectedYear}</option>
     {carYears.map((carYear) => <option value={carYear.year}>{carYear.year}</option>)}
     </select>
+}
 
-    <button className="findCar" > Find Car </button>
+{showButton && <button className="findCar" onClick={setLoaderStatus} > Find Car </button> }
+
+{!showSelect && <div className="carTitle" > {carTitle} </div>}
         </div>
 
 

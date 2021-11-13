@@ -20,6 +20,7 @@ const CarImage = (props) => {
             setImages(transformedImages);
             console.log(transformedImages);
             setImageSet(true);
+            props.onImageReadyToDisplay();
           });
       }
 

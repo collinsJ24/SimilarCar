@@ -8,8 +8,11 @@ const ComparisonSearch = () => {
     return (
         <div className="Search">
             <CarSearch carHeading = "Car 1"/>
-            <button className="glow-on-hover"> Compare Cars </button>
             <CarSearch carHeading = "Car 2" />
+            <div className="buttons">
+            <button className="glow-on-hover"> Find similar Cars </button>
+            </div>
+            
 
         </div>
     );

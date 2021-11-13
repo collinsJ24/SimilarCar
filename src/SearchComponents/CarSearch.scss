@@ -1,9 +1,8 @@
 .CarDropdown{
-    align-items: center;
-    display: flex;
+    //display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-inline: 100px;
+	margin-right: 20px;
 }
 
 .BarStyling {
@@ -16,7 +15,7 @@
 }
 
 .select {
-	width: 100%;
+	width: 86%;
 	height: 40px;
 	cursor: pointer;
 	background-color: white;
@@ -138,7 +137,7 @@
 }
 
 .findCar {
-    width: 100%;
+    width: 86%;
     height: 50px;
     border: none;
     outline: none;
@@ -170,7 +169,7 @@
 }
 
 .findCar:active {
-    color: rgb(197, 186, 186)
+    color: #81808f;
 }
 
 .findCar:active:after {
@@ -187,7 +186,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgb(202, 201, 201);
+    background: #81808f;
     left: 0;
     top: 0;
     border-radius: 10px;
@@ -198,3 +197,15 @@
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+.carTitle{
+    font-style: oblique;
+    font-family: fantasy;
+	font-size: 20px;
+	color: black;
+    
+  }
+
+  .loader{
+
+  }

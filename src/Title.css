@@ -1,18 +1,20 @@
 /*  src/Title.css  */
 .Title {
-    background-color: black;
   display: flex;
+  border: inset;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
   height: 80px;
   }
 
   .heading{
     margin-right: 900px !important;
     font-size: 30px !important;
+    font-style: oblique;
+    font-family: fantasy;
     
   }
 
