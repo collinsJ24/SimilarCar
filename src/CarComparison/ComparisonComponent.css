@@ -1,6 +1,6 @@
 .ComparisonComponent {
   display: flex;
-  height: 400px;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   border: rgb(240, 235, 235);

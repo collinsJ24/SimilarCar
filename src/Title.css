@@ -1,20 +1,72 @@
 /*  src/Title.css  */
 .Title {
+    display: flex;
+    border: inset;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: black;
+    height: 80px;
+    }
+  
+    .heading{
+    width: 40%;
+      font-size: 30px !important;
+      font-style: oblique;
+      font-family: fantasy;
+      color: #a39e9e;
+      margin-left:40px;
+    }
+
+
+
+body{
+  background: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
   display: flex;
-  border: inset;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-right: 100px;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid black;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 10px 0 0 10px;
+  outline: none;
   color: black;
-  height: 80px;
-  }
+  font-size: 15px;
+  font-family: Clear Sans,Tahoma,Geneva,"sans-serif";
+    font-weight: 900;
+}
 
-  .heading{
-    margin-right: 900px !important;
-    font-size: 30px !important;
-    font-style: oblique;
-    font-family: fantasy;
-    
-  }
+.searchTerm:focus{
+  color: black;
+}
 
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid black;
+  background: black;
+  text-align: center;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
