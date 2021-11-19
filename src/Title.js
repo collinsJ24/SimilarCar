@@ -1,18 +1,21 @@
 import React from 'react'
 import './Title.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+import CarVIN from './CarSpecResults/CarVIN';
 
-function Title() {
+function Title(props) {
+
+  const [VinDetails, setVinDetails] = useState("");
+
+  const setVINDetails = (vin) => {
+    setVinDetails(vin);
+    props.setVINDetails2(vin);
+  }
+
   return (
     <div className="Title">
       <div className="heading">Similar Car</div>
-      <div class="search">
-      <input type="text" class="searchTerm" placeholder="Enter VIN To Retrieve Vehicle Details & Market Valuation For Your Car"/>
-      <button type="submit" class="searchButton">
-      <FontAwesomeIcon icon={ faSearch }/>
-     </button>
-   </div>
+     <CarVIN VINdetails = {setVINDetails} />
     </div>
   )
 }

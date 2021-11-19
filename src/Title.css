@@ -37,7 +37,6 @@ body{
   border: 3px solid black;
   border-right: none;
   padding: 5px;
-  height: 20px;
   border-radius: 10px 0 0 10px;
   outline: none;
   color: black;
@@ -53,13 +52,16 @@ body{
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid black;
   background: black;
   text-align: center;
   color: white;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+}
+
+svg:not(:root).svg-inline--fa{
+    padding-top: 5px !important;
 }
 
 /*Resize the wrap to see the search bar change!*/
