@@ -76,7 +76,7 @@ const CarSearch = (props) => {
   const [carMakes, setCarMakes] = useState([]);
   const fetchCarMakesHandler = async () => {
     return await fetch(
-      "http://localhost:8080/car/cars"
+      "https://stark-lowlands-96241.herokuapp.com/car/cars"
     )
       .then((response) => {
         return response.json();
@@ -95,7 +95,7 @@ const CarSearch = (props) => {
   const [carModels, setCarModels] = useState([]);
   const fetchCarModelHandler = async (makeId) => {
     return await fetch(
-      "http://localhost:8080/car/" + makeId
+      "https://stark-lowlands-96241.herokuapp.com/car/" + makeId
     )
       .then((response) => {
         return response.json();
