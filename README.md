@@ -1,8 +1,8 @@
 # Similar Car
 
-A car comparison website which will be built using React, AWS and SQLite.
+A car comparison website which will be built using React, with a Java / Spring-Boot backend and SQLite database.
 
 The site is currently hosted on a free Heroku Dyno here, https://similar-car.herokuapp.com/
 It is still a work in progress.
 
-When completed the site will be hosted on similarcar.com when completed.
+When completed the site will be hosted with AWS and will be deployed on the domain similarcar.com.
