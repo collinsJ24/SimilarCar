@@ -15,7 +15,7 @@ const VINResults = (props) => {
   };
 
   const fetchVINdetails = async (VINnumber) => {
-    return await fetch("http://localhost:8080/car/cars/VIN/" + VINnumber)
+    return await fetch("https://stark-lowlands-96241.herokuapp.com/car/cars/VIN/" + VINnumber)
       .then((response) => {
         return response.json();
       })
